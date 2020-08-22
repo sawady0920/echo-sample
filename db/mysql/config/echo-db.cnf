@@ -1,0 +1,24 @@
+#
+# The MySQL Community Server configuration file for Apotool & Box.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+[mysqld]
+# log
+log-error=/var/log/mysql/error.log
+# general_log=ON
+# general_log_file=/var/log/mysqld-query.log
+character-set-server=utf8
+default-character-set=utf8
+
+# timezone
+default_time_zone='+00:00'
+
+[client]
+# character set
+default-character-set=utf8
+
+[mysql]
+# character set
+default-character-set=utf8
