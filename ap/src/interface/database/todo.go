@@ -20,19 +20,19 @@ func (repo *TodoRepository) FindAll() (todos domain.Todos, err error) {
 	return
 }
 
-func (repo *TodoRepository) Store(u domain.Todo) (todo domain.Todo, err error) {
-	if err = repo.Create(&u).Error; err != nil {
+func (repo *TodoRepository) Store(t domain.Todo) (todo domain.Todo, err error) {
+	if err = repo.Create(&t).Error; err != nil {
 		return
 	}
-	todo = u
+	todo = t
 	return
 }
 
-func (repo *TodoRepository) Update(u domain.Todo) (todo domain.Todo, err error) {
-	if err = repo.Save(&u).Error; err != nil {
+func (repo *TodoRepository) Update(t domain.Todo) (todo domain.Todo, err error) {
+	if err = repo.Save(&t).Error; err != nil {
 		return
 	}
-	todo = u
+	todo = t
 	return
 }
 
