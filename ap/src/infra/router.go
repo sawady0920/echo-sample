@@ -24,15 +24,15 @@ func Init() {
 	})
 	e.GET("/users", func(c echo.Context) error { return userController.Index(c) })
 	e.GET("/user/:id", func(c echo.Context) error { return userController.Show(c) })
-	e.POST("user/create", func(c echo.Context) error { return userController.Create(c) })
-	e.PUT("/user/:id", func(c echo.Context) error { return userController.Save(c) })
+	e.POST("/user", func(c echo.Context) error { return userController.Create(c) })
+	e.PUT("/user", func(c echo.Context) error { return userController.Save(c) })
 	e.DELETE("/user/:id", func(c echo.Context) error { return userController.Delete(c) })
 
 	todoController := controller.NewTodoController(NewSqlHandler())
 	e.GET("/todos", func(c echo.Context) error { return todoController.Index(c) })
 	e.GET("/todo/:id", func(c echo.Context) error { return todoController.Show(c) })
-	e.POST("todo/create", func(c echo.Context) error { return todoController.Create(c) })
-	e.PUT("/todo/:id", func(c echo.Context) error { return todoController.Save(c) })
+	e.POST("todo", func(c echo.Context) error { return todoController.Create(c) })
+	e.PUT("/todo", func(c echo.Context) error { return todoController.Save(c) })
 	e.DELETE("/todo/:id", func(c echo.Context) error { return todoController.Delete(c) })
 
 	// Start server
