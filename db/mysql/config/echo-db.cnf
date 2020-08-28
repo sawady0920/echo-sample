@@ -10,7 +10,7 @@ log-error=/var/log/mysql/error.log
 # general_log=ON
 # general_log_file=/var/log/mysqld-query.log
 character-set-server=utf8
-default-character-set=utf8
+# default-character-set=utf8
 
 # timezone
 default_time_zone='+00:00'
