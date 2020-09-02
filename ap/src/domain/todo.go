@@ -1,13 +1,18 @@
 package domain
 
-import "time"
+import (
+	"github.com/jinzhu/gorm"
+	"time"
+)
 
 type Todos []Todo
 
 type Todo struct {
-	ID        int       `json:"id"`
-	Title     string    `json:"title"`
-	Body      string    `json:"body"`
-	CreatedAt time.Time `json:"createdAt"`
-	UpdatedAt time.Time `json:"updatedAt"`
+	gorm.Model
+	ID        int       `gorm:"column:id" json:"id"`
+	Title     string    `gorm:"column:title" json:"title"`
+	Body      string    `gorm:"column:body" json:"body"`
+	CreatedAt time.Time `gorm:"column:created_at" json:"createdAt"`
+	UpdatedAt time.Time `gorm:"column:updated_at" json:"updatedAt"`
+	UserId    uint      `gorm:"column:user_id" json:"userId"`
 }

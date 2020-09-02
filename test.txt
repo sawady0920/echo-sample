@@ -1,0 +1,13 @@
+SELECT * FROM `todos`  WHERE `todos`.`id` = 1 ORDER BY `todos`.`id` ASC LIMIT 1
+
+UPDATE `todos` SET `id` = 1, `title` = 'asdfghjkl', `updated_at` = '2020-09-01 10:24:35'  WHERE `todos`.`id` = 1
+
+
+
+
+
+SELECT * FROM `todos`  WHERE `todos`.`id` = 30 ORDER BY `todos`.`id` ASC LIMIT 1
+
+INSERT INTO `todos` (`id`,`title`,`body`,`created_at`,`updated_at`) VALUES (30,'asdfghjkl','','2020-09-01 10:26:14','2020-09-01 10:26:14')
+
+

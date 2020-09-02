@@ -11,8 +11,10 @@ import (
 
 func main() {
 
-	// time := time.Time{}
+	begin := time.Time{}
 	// time := time.Now()
+	fmt.Println(begin.IsZero())
+
 	start := time.Date(2020, time.August, 15, 12, 13, 24, 0, time.UTC)
 	end := time.Date(2020, time.August, 30, 12, 13, 24, 0, time.UTC)
 	fmt.Println(start)
@@ -21,8 +23,8 @@ func main() {
 	formatEnd := end.Format("2006-01-02 15:04:05")
 	sqlHandler := NewSqlHandler()
 	items := []domain.Todo{}
-	between := "created_at BETWEEN '" + formatStart + "' AND '" + formatEnd + "'"
-	// between := gorm.Expr("created_at BETWEEN ? AND ?", start.Format("2006-01-02 15:04:05"), end.Format("2006-01-02 15:04:05"))
+	// between := "created_at BETWEEN '" + formatStart + "' AND '" + formatEnd + "'"
+	between := gorm.Expr("created_at BETWEEN '" + formatStart + "' AND '" + formatEnd + "'")
 	sqlHandler.Debug().Where("id > ?", 18).Where(between).Find(&items)
 	// sqlHandler.Debug().Where("id > ?", 18).Where("created_at BETWEEN ? AND ?", start, end).Find(&items)
 	fmt.Println(items)
