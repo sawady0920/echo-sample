@@ -1,4 +1,4 @@
-package infra
+package router
 
 import (
 	"echo-sample/interface/controller"

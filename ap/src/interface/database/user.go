@@ -1,9 +1,12 @@
 package database
 
-import "echo-sample/domain"
+import (
+	"echo-sample/domain"
+	"echo-sample/infra"
+)
 
 type UserRepository struct {
-	SqlHandler
+	SqlHandler infra.SqlHandler
 }
 
 func (repo *UserRepository) FindById(id int) (user domain.User, err error) {

@@ -4,6 +4,7 @@ import (
 	"strconv"
 
 	"echo-sample/domain"
+	"echo-sample/infra"
 	"echo-sample/interface/database"
 	"echo-sample/usecase"
 
@@ -14,7 +15,7 @@ type UserController struct {
 	Interactor usecase.UserInteractor
 }
 
-func NewUserController(sqlHandler database.SqlHandler) *UserController {
+func NewUserController(sqlHandler infra.SqlHandler) *UserController {
 	return &UserController{
 		Interactor: usecase.UserInteractor{
 			UserRepository: &database.UserRepository{
